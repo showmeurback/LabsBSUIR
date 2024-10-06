@@ -1,0 +1,62 @@
+economy -> control_and_accounting;;
+control_and_accounting -> counnters;;
+counters 
+=> nrel_accounting_of_usage:
+(* 
+    <- sc_node_tupple;;
+    -> gas_supply; electricity; heatenergy_supply;;
+   *);; 
+gas <- power_supply;;
+heatenergy <- power_supply;;
+electricity <- power_supply;;
+
+
+color -> colorless;;
+colorless -> CH4;;
+substance -> substance;;
+substance => nrel_composition: CH4;;
+CH4 <- gas;;
+gas -> rrel_gas_supply: Yamal_Europe;;
+gas_line -> Yamal_Europe;;
+gas <- power_supply;;
+
+
+1 => rrel_transmitting_SC_text: 2;;
+2 -> [A set of organizational measures and technical means necessary to provide electricity, gas and heat to consumers in unconditional compliance with safety requirements and standards, as well as to preserve and maintain comfortable conditions];;
+1 
+   -> nrel_usage_constants:
+   (* 
+    <- sc_node_tupple;;
+    -> gas_supply; electricity; heatenergy_supply;;
+   *);; 
+
+
+power_supply => nrel_main_identifer: power_supply;;
+power_supply <- russian_language;;
+power_supply => nrel_main_identifer: energy_supplying;;
+power_supply <- english;;
+
+
+energy -> station_electicity;;
+energy -> station_heatenergy;;
+station_electricity -> NPP;;
+station_electricity -> HPP;;
+station_electricity -> TPP;;
+station_heatenergy -> TPP;;
+NPP => nrel_energy_production: electricity;;
+HPP => nrel_energy_production: electricity;;
+TPP => nrel_energy_production: heatenergy;;
+electicity <- power_supply;;
+heatenergy <- power_supply;;
+
+
+
+
+
+
+
+
+
+
+
+
